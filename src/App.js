@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+// Importing Required Libraries and Components
+
 import './App.css';
+import SignInSide from './pages/SignIN';
+import SignUp from './pages/SignUP';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+
+// Functional Component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Implementin React Router */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignInSide />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
+//Exporting App
 export default App;
